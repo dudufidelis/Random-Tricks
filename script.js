@@ -1,9 +1,16 @@
-let tricks = ["flip", "varial", "heel-flip", "varial-flip", "impossible"];
+let soloTricks = ["flip", "varial", "heel-flip", "varial-flip", "impossible"];
+let skateParkTricks = ["Nose Slide", " Tail Slide", "Croked", "Rock Slide", "Manual"];
+let allTricks = soloTricks.concat(skateParkTricks);
 
-document.querySelector('#btn').addEventListener('click', () =>{ 
-    let number = Math.floor(Math.random() * tricks.length);
-    const randomTrick = tricks[number];
-    const item = document.querySelector('#trick')
+
+console.log(gameMode)
+
+document.querySelector('#btn').addEventListener('click', () =>{
+    const gameMode = document.querySelector('#gameMode').value;
+     
+    let number = Math.floor(Math.random() * soloTricks.length);
+    const randomTrick = soloTricks[number];
+    const item = document.querySelector('#trick');
     item.innerHTML = randomTrick;
 });
 
