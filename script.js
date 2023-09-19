@@ -44,7 +44,7 @@ const soloTricks = [
     "Indy Grab"
   ];
   
-let allTricks = soloTricks.concat(skateParkTricks);
+const allTricks = soloTricks.concat(skateParkTricks);
 
 document.querySelector('#btn').addEventListener('click', () =>{
     const gameMode = document.querySelector('#gameMode').value;
@@ -58,7 +58,7 @@ document.querySelector('#btn').addEventListener('click', () =>{
 });
 
 function getTrick(mode) {
-    let number = Math.floor(Math.random() * mode.length);
+    const number = Math.floor(Math.random() * mode.length);
     const randomTrick = mode[number];
     showTrick(randomTrick);
 };
