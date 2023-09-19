@@ -1,29 +1,74 @@
-let soloTricks = ["flip", "varial", "heel-flip", "varial-flip", "impossible"];
-let skateParkTricks = ["Nose Slide", " Tail Slide", "Croked", "Rock Slide", "Manual"];
-let allTricks = soloTricks.concat(skateParkTricks);
+const soloTricks = [
+    "Kickflip",
+    "Heelflip",
+    "Ollie",
+    "Backside 180",
+    "Frontside 180",
+    "Pop Shove-It",
+    "Hardflip",
+    "Varial Kickflip",
+    "360 Flip",
+    "Nollie Flip",
+    "Switch Ollie",
+    "Switch Heelflip",
+    "Casper Flip",
+    "Inward Heelflip",
+    "Bigspin",
+    "Frontside Flip",
+    "Backside Flip",
+    "Tre Flip",
+    "Nollie Heelflip",
+    "360 Ollie"
+  ];
 
+  const skateParkTricks = [
+    "Nose Slide",
+    "Tail Slide",
+    "Crooked Grind",
+    "Smith Grind",
+    "50-50 Grind",
+    "Blunt Slide",
+    "Rock and Roll",
+    "Frontside Grind",
+    "Backside Grind",
+    "Feeble Grind",
+    "Lipslide",
+    "Disaster",
+    "Fakie 5-0",
+    "Axle Stall",
+    "Kickturn",
+    "Boneless",
+    "No Comply",
+    "Stalefish",
+    "Melon Grab",
+    "Indy Grab"
+  ];
+  
+let allTricks = soloTricks.concat(skateParkTricks);
 
 document.querySelector('#btn').addEventListener('click', () =>{
     const gameMode = document.querySelector('#gameMode').value;
     if (gameMode === 'skateParkTricks') {
-        let number = Math.floor(Math.random() * skateParkTricks.length);
-        const randomTrick = skateParkTricks[number];
-        showTrick(randomTrick);
+        getTrick(skateParkTricks);
     } else if (gameMode === 'soloTricks') {
-        let number = Math.floor(Math.random() * soloTricks.length);
-        const randomTrick = soloTricks[number];
-        showTrick(randomTrick);
+        getTrick(soloTricks);
     } else {
-        let number = Math.floor(Math.random() * allTricks.length);
-        const randomTrick = allTricks[number];
-        showTrick(randomTrick);
+        getTrick(allTricks);
     }
 });
+
+function getTrick(mode) {
+    let number = Math.floor(Math.random() * mode.length);
+    const randomTrick = mode[number];
+    showTrick(randomTrick);
+};
 
 function showTrick(p) {
     const trick = document.querySelector('#trick');
     trick.innerHTML = p;
-}
+};
+
+
 
 
 
